@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:scholer/material/type/branch/ce.dart';
-import 'package:scholer/material/type/branch/cse.dart';
-import 'package:scholer/material/type/branch/it.dart';
+import 'package:vanchan/material/type/branch/ce.dart';
+import 'package:vanchan/material/type/branch/cse.dart';
+import 'package:vanchan/material/type/branch/it.dart';
 
 class BranchPage extends StatelessWidget {
   const BranchPage({super.key});

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:scholer/community/community.dart';
-import 'package:scholer/material/material.dart';
-import 'package:scholer/project/project.dart';
+import 'package:vanchan/community/community.dart';
+import 'package:vanchan/material/material.dart';
+import 'package:vanchan/project/project.dart';
 
 class AppBarPage extends StatefulWidget {
   const AppBarPage({Key? key}) : super(key: key);
@@ -33,9 +33,7 @@ class _AppBarPageState extends State<AppBarPage> {
   Container buildMyNavBar(BuildContext context) {
     return Container(
       height: 60,
-      decoration: const BoxDecoration(
-        color: Color.fromARGB(255, 16, 121, 174)
-      ),
+      decoration: const BoxDecoration(color: Color.fromARGB(255, 16, 121, 174)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -47,14 +45,14 @@ class _AppBarPageState extends State<AppBarPage> {
             },
             child: pageIndex == 0
                 ? Container(
-                  height: 45,
-                  decoration: BoxDecoration(
+                    height: 45,
+                    decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
                     ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8),
-                    child: Row(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8),
+                      child: Row(
                         children: [
                           Image.asset("assets/images/material.png", height: 30),
                           const SizedBox(width: 7),
@@ -65,8 +63,8 @@ class _AppBarPageState extends State<AppBarPage> {
                           ),
                         ],
                       ),
-                  ),
-                )
+                    ),
+                  )
                 : Image.asset("assets/images/material.png", height: 30),
           ),
           TextButton(
@@ -77,24 +75,24 @@ class _AppBarPageState extends State<AppBarPage> {
               },
               child: pageIndex == 1
                   ? Container(
-                    height: 45,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8),
-                      child: Row(
+                      height: 45,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                        child: Row(
                           children: [
-                            Image.asset("assets/images/project.png", height: 30),
+                            Image.asset("assets/images/project.png",
+                                height: 30),
                             const SizedBox(width: 7),
                             Text("Project",
                                 style: GoogleFonts.poppins(
                                     fontSize: 22, color: Colors.black))
                           ],
                         ),
-                    ),
-                  )
+                      ),
+                    )
                   : Image.asset("assets/images/project.png", height: 30)),
           TextButton(
               onPressed: () {
@@ -104,24 +102,24 @@ class _AppBarPageState extends State<AppBarPage> {
               },
               child: pageIndex == 2
                   ? Container(
-                    height: 45,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8),
-                      child: Row(
+                      height: 45,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                        child: Row(
                           children: [
-                            Image.asset("assets/images/community.png", height: 30),
+                            Image.asset("assets/images/community.png",
+                                height: 30),
                             const SizedBox(width: 7),
                             Text("Community",
                                 style: GoogleFonts.poppins(
                                     fontSize: 22, color: Colors.black))
                           ],
                         ),
-                    ),
-                  )
+                      ),
+                    )
                   : Image.asset("assets/images/community.png", height: 30)),
         ],
       ),

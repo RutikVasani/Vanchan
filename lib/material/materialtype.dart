@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:scholer/material/type/assignment.dart';
-import 'package:scholer/material/type/classmaterial.dart';
-import 'package:scholer/material/type/miiniproject.dart';
-import 'package:scholer/material/type/practicalfile.dart';
-import 'package:scholer/material/type/questionpaper.dart';
+import 'package:vanchan/material/type/assignment.dart';
+import 'package:vanchan/material/type/classmaterial.dart';
+import 'package:vanchan/material/type/miiniproject.dart';
+import 'package:vanchan/material/type/practicalfile.dart';
+import 'package:vanchan/material/type/questionpaper.dart';
 
 class MaterialTypePage extends StatelessWidget {
   const MaterialTypePage({super.key});

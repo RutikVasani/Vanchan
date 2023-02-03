@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.scholer">
+    package="com.example.vanchan">
    <application
-        android:label="Scholer Shelf"
+        android:label="vanchan Shelf"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

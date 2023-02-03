@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scholer/bottomnav.dart';
+import 'package:vanchan/bottomnav.dart';
 
 void main() {
   runApp(const MyApp());
