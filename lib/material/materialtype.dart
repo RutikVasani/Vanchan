@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:vanchan/material/type/assignment.dart';
-import 'package:vanchan/material/type/classmaterial.dart';
-import 'package:vanchan/material/type/miiniproject.dart';
-import 'package:vanchan/material/type/practicalfile.dart';
-import 'package:vanchan/material/type/questionpaper.dart';
+import 'package:vanchan/material/type/materialtypebranch.dart';
 
-class MaterialTypePage extends StatelessWidget {
-  const MaterialTypePage({super.key});
+class MaterialTypePage extends StatefulWidget {
+  String sortsubname;
+  MaterialTypePage({super.key, required this.sortsubname});
 
+  @override
+  State<MaterialTypePage> createState() => _MaterialTypePageState();
+}
+
+class _MaterialTypePageState extends State<MaterialTypePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,8 +19,8 @@ class MaterialTypePage extends StatelessWidget {
           elevation: 3.0,
           backgroundColor: const Color.fromARGB(255, 16, 121, 174),
           title: Text(
-            "Material Type",
-            style: TextStyle(fontSize: 25, letterSpacing: 2),
+            widget.sortsubname,
+            style: TextStyle(fontSize: 23, letterSpacing: 2),
           ),
         ),
         body: Padding(
@@ -42,7 +44,10 @@ class MaterialTypePage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => ClassMaterialPage(),
+                            builder: (context) => MaterialTypeBranchPage(
+                              type: 'Class Material',
+                              sortsubname: widget.sortsubname,
+                            ),
                           ),
                         );
                       },
@@ -68,7 +73,10 @@ class MaterialTypePage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => PracticalFilePage(),
+                            builder: (context) => MaterialTypeBranchPage(
+                              type: 'Practical File',
+                              sortsubname: widget.sortsubname,
+                            ),
                           ),
                         );
                       },
@@ -94,7 +102,10 @@ class MaterialTypePage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => AssignmentPage(),
+                            builder: (context) => MaterialTypeBranchPage(
+                              type: 'Assignment',
+                              sortsubname: widget.sortsubname,
+                            ),
                           ),
                         );
                       },
@@ -120,7 +131,10 @@ class MaterialTypePage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => MiniProjectPage(),
+                            builder: (context) => MaterialTypeBranchPage(
+                              type: 'Mini Project',
+                              sortsubname: widget.sortsubname,
+                            ),
                           ),
                         );
                       },
@@ -146,7 +160,10 @@ class MaterialTypePage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => QuestionPaperPage(),
+                            builder: (context) => MaterialTypeBranchPage(
+                              type: 'Question Paper',
+                              sortsubname: widget.sortsubname,
+                            ),
                           ),
                         );
                       },

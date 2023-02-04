@@ -21,7 +21,7 @@ class _AppBarPageState extends State<AppBarPage> {
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: const Color.fromARGB(255, 16, 121, 174),
-        title: Text('Scholar Shelf',
+        title: Text('Vanchan',
             style:
                 GoogleFonts.ubuntu(fontSize: 25, fontWeight: FontWeight.bold)),
       ),

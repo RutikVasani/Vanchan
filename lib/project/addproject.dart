@@ -1,31 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:vanchan/services/Create/community/addcommunity.dart';
+import 'package:vanchan/services/Create/project/addproject.dart';
 
-class CommunityPage extends StatefulWidget {
-  CommunityPage({super.key});
+class AddProjectPage extends StatefulWidget {
+  const AddProjectPage({super.key});
 
   @override
-  State<CommunityPage> createState() => _CommunityPageState();
+  State<AddProjectPage> createState() => _AddProjectPageState();
 }
 
-class _CommunityPageState extends State<CommunityPage> {
+class _AddProjectPageState extends State<AddProjectPage> {
   final _formKey = GlobalKey<FormState>();
-
-  late String firstname;
-  late String lastname;
-  late String contectno;
-  late String emailid;
-  late String collage;
-  late String department;
-  late String semester;
+  late String projecttitle;
+  late String description;
   late String technology;
+  late String developer1;
+  var developer2;
+  var developer3;
   late String github;
-  late String linkedin;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade300,
+      appBar: AppBar(
+        elevation: 3.0,
+        backgroundColor: const Color.fromARGB(255, 16, 121, 174),
+        title: Text(
+          "Add Project",
+          style: TextStyle(fontSize: 25, letterSpacing: 2),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(10),
@@ -43,10 +47,10 @@ class _CommunityPageState extends State<CommunityPage> {
                             horizontal: 15, vertical: 5),
                         child: TextFormField(
                           decoration:
-                              const InputDecoration(hintText: "First Name"),
+                              const InputDecoration(hintText: "Project Title"),
                           onChanged: (value) {
                             setState(() {
-                              firstname = value;
+                              projecttitle = value;
                             });
                           },
                         ),
@@ -56,10 +60,10 @@ class _CommunityPageState extends State<CommunityPage> {
                             horizontal: 15, vertical: 5),
                         child: TextFormField(
                           decoration:
-                              const InputDecoration(hintText: "Last Name"),
+                              const InputDecoration(hintText: "Description"),
                           onChanged: (value) {
                             setState(() {
-                              lastname = value;
+                              description = value;
                             });
                           },
                         ),
@@ -69,72 +73,7 @@ class _CommunityPageState extends State<CommunityPage> {
                             horizontal: 15, vertical: 5),
                         child: TextFormField(
                           decoration:
-                              const InputDecoration(hintText: "Contect Number"),
-                          onChanged: (value) {
-                            setState(() {
-                              contectno = value;
-                            });
-                          },
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 15, vertical: 5),
-                        child: TextFormField(
-                          decoration:
-                              const InputDecoration(hintText: "Email Id"),
-                          onChanged: (value) {
-                            setState(() {
-                              emailid = value;
-                            });
-                          },
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 15, vertical: 5),
-                        child: TextFormField(
-                          decoration:
-                              const InputDecoration(hintText: "Collage"),
-                          onChanged: (value) {
-                            setState(() {
-                              collage = value;
-                            });
-                          },
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 15, vertical: 5),
-                        child: TextFormField(
-                          decoration:
-                              const InputDecoration(hintText: "Department"),
-                          onChanged: (value) {
-                            setState(() {
-                              department = value;
-                            });
-                          },
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 15, vertical: 5),
-                        child: TextFormField(
-                          decoration: const InputDecoration(
-                              hintText: "College Semester"),
-                          onChanged: (value) {
-                            setState(() {
-                              semester = value;
-                            });
-                          },
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 15, vertical: 5),
-                        child: TextFormField(
-                          decoration:
-                              const InputDecoration(hintText: "Technology"),
+                              const InputDecoration(hintText: "HTML,CSS"),
                           onChanged: (value) {
                             setState(() {
                               technology = value;
@@ -146,11 +85,37 @@ class _CommunityPageState extends State<CommunityPage> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 15, vertical: 5),
                         child: TextFormField(
-                          decoration: const InputDecoration(
-                              hintText: "Github Profile Link"),
+                          decoration:
+                              const InputDecoration(hintText: "Developer 1"),
                           onChanged: (value) {
                             setState(() {
-                              github = value;
+                              developer1 = value;
+                            });
+                          },
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 15, vertical: 5),
+                        child: TextField(
+                          decoration:
+                              const InputDecoration(hintText: "Developer 2"),
+                          onChanged: (value) {
+                            setState(() {
+                              developer2 = value;
+                            });
+                          },
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 15, vertical: 5),
+                        child: TextField(
+                          decoration:
+                              const InputDecoration(hintText: "Developer 3"),
+                          onChanged: (value) {
+                            setState(() {
+                              developer3 = value;
                             });
                           },
                         ),
@@ -159,11 +124,11 @@ class _CommunityPageState extends State<CommunityPage> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 15, vertical: 5),
                         child: TextFormField(
-                          decoration: const InputDecoration(
-                              hintText: "Linkedin Profile Link"),
+                          decoration:
+                              const InputDecoration(hintText: "Github Link"),
                           onChanged: (value) {
                             setState(() {
-                              linkedin = value;
+                              github = value;
                             });
                           },
                         ),
@@ -184,33 +149,24 @@ class _CommunityPageState extends State<CommunityPage> {
                       );
                     }
                     _formKey.currentState!.save();
-                    Map<String, dynamic> studentdata = {
-                      "First Name": firstname,
-                      "Last Name": lastname,
-                      "Contect No": contectno,
-                      "Email Id": emailid,
-                      "Collage": collage,
-                      "Department": department,
-                      "Semester": semester,
+                    Map<String, dynamic> projectdata = {
+                      "Project Title": projecttitle,
+                      "Description": description,
                       "Technology": technology,
+                      "Developer 1": developer1,
+                      "Developer 2": developer2,
+                      "Developer 3": developer3,
                       "Github": github,
-                      "Linkedin": linkedin,
                     };
-                    writeData()
-                        .addStudent(contectno, studentdata, context)
+                    WriteData()
+                        .addProject(projecttitle, projectdata, context)
                         .then((result) {
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                        content: Text("Details submitted"),
+                        content: Text("Project Added"),
                         backgroundColor: Colors.red,
                       ));
                     });
                     Navigator.pop(context);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => BottomAppBar(),
-                      ),
-                    );
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
